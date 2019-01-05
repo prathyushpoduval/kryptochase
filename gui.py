@@ -1,5 +1,5 @@
 import sys
-from PyQt4 import QtGui,QtCore
+from PyQt4 import QtGui,QtCore, uic
 
 class Window(QtGui.QMainWindow):
 
@@ -9,9 +9,11 @@ class Window(QtGui.QMainWindow):
         #self.setGeometry(0, 0, 500, 300)
         self.setWindowTitle("PyQT tuts!")
         self.setWindowIcon(QtGui.QIcon('pythonlogo.png'))
+        uic.loadUi('cops.ui', self)
         self.home()
 
     def home(self):
+        a='''
         screen = QtGui.QDesktopWidget().screenGeometry()
         SCREEN_HEIGHT=screen.height()
         SCREEN_WIDTH=screen.width()
@@ -36,11 +38,11 @@ class Window(QtGui.QMainWindow):
             self.string_btn[i].clicked.connect(self.string_operation(i))
             self.string_btn[i].resize(string_btn_w,string_btn_h)
             self.string_btn[i].move((i+1)*string_btn_x+i*string_btn_w, string_btn_y)
-
+        '''
 
         self.showFullScreen()
         self.show()
-
+'''
     def paintEvent(self, e):
         qp = QtGui.QPainter()
         qp.begin(self)
@@ -55,8 +57,8 @@ class Window(QtGui.QMainWindow):
     def string_operation(self,i):
         def func():
             print(i)
-        return func
-
+       return func
+'''
 
 def run():
     app = QtGui.QApplication(sys.argv)

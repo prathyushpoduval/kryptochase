@@ -1,0 +1,53 @@
+Protocol:
+Cop:
+1st char:
+ABCDEF... for cop number
+P for powerup
+
+if not powerup
+	
+	next char:	
+	char corresponding to the number of chars in string	
+	next N chars:
+	the string after doing operations
+if powerup
+	next  char:
+	G: to get i'th digit
+	M: MT mind type powerup
+	if G:
+		next char is the char corresponding to i in ascii
+	if M:
+		next N chars: 
+		the string to check for MT mind style powerup
+theif:
+1st char:
+X
+next char:
+E if game ends, C if it is normal turn of theif, P if it is powerup response for cops
+if E:
+	next char: who wins: X if theif, ABCDE for cop number
+if P:
+	next char : G or M based on the response powerup
+	if G:
+		next char: the char
+	if M:
+		next char: number of right ones which are perfectly placed(ascii corresponding char to the number)
+		next char: number of right ones which might be incorrectly placed("")
+else:
+	next char: N if Normal Move, R if revealing move
+	if R:
+		next N chars: mah string
+	if N:
+		next char: number(call this i) of moves played in this turn(ascii corresponding char)
+		Next 2i chars: which move
+			S1: swap 1
+			s2: swap 2
+			LC: left cyclic
+			SC: Right cyclic
+			BT: hidden move
+						
+		
+Exact game rules
+	
+
+

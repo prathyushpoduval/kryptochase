@@ -3,7 +3,8 @@ currentCop="A"
 default="123456"
 numcops=5
 def nextCop(a):
-	return chr((ord(a)-ord("A")+1)%numcops+ord("A"))
+	return chr((ord(a)-ord("A")+1)%numcop
+	+ord("A"))
 n=len(default)
 copStrs=[default]*numcops
 xStr=n*"*"
@@ -13,9 +14,9 @@ def xLoses():
 	gameEnd()
 
 def xWins():
-	showStringSomehow("You Lose") 
+	showStringSomehow("You Lose")
 	gameEnd()
-	
+
 def map(x):
 	return ord(x)-ord("A")
 def msgRecieve(a):
@@ -96,10 +97,3 @@ def pwpM_clicked():
 	if pwpM_playable():
 		a=getStringfromGui()
 		sendMessage("PM"+a)
-
-
-
-
-
-
-		

@@ -240,3 +240,14 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
+def timer():
+    print("time called")
+
+def start():
+    timer = QTimer(self)
+    timer.timeout.connect(timer)
+    timer.setInterval(5000)
+    timer.start()
+
+start()

@@ -1,5 +1,6 @@
 import sys
 from PyQt4 import QtGui,QtCore, uic
+from PyQt4.QtCore import *
 
 class Window(QtGui.QMainWindow):
 
@@ -10,7 +11,15 @@ class Window(QtGui.QMainWindow):
         self.setWindowTitle("PyQT tuts!")
         self.setWindowIcon(QtGui.QIcon('pythonlogo.png'))
         uic.loadUi('cops.ui', self)
+
+        timer = QTimer(self)
+        timer.timeout.connect(self.timer)
+        timer.setInterval(500)
+        timer.start()
         self.home()
+
+    def timer(self):
+        timer()
 
     def home(self):
         a='''
@@ -64,5 +73,12 @@ def run():
     app = QtGui.QApplication(sys.argv)
     GUI = Window()
     sys.exit(app.exec_())
+
+
+def timer():
+    print("time called")
+
+
+
 print("h")
 run()
